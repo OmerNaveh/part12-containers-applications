@@ -1,9 +1,13 @@
 FROM node:16
 
-WORKDIR /todo
+USER node
+  
+WORKDIR /usr/src/app
 
-COPY . .
+COPY --chown=node:node . .
 
-RUN npm ci
+RUN npm ci 
 
-CMD npm run start
+ENV DEBUG=playground:*
+
+CMD npm start

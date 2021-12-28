@@ -9,7 +9,7 @@ if (MONGO_URL && !mongoose.connection.readyState)
       console.log("connected");
     })
     .catch((e) => {
-      console.log("cannot connected", e);
+      console.log("cannot connect", e);
     });
 
 module.exports = {
